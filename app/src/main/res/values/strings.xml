@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">metro-explorer-hahaha</string>
+    <string name="nearest_station">Foggy Bottom</string>
+    <string name="landmark1">GW</string>
+    <string name="landmark2">Smith Center</string>
+    <string name="landmark3"></string>
+    <string name="landmark4"></string>
+    <string name="landmark5"></string>
+    <string name="select_station">Select Station</string>
+    <string name="station1">Foggy Bottom</string>
+    <string name="station2">Rosslyn</string>
+    <string name="station3">Gallery Place</string>
+    <string name="station4"></string>
+    <string name="station5"></string>
 </resources>
