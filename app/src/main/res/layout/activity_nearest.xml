@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="@string/nearest_station"
+        android:textStyle="bold"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:background="@drawable/bg_line"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#E0E0E0"
+        android:text="@string/landmark1"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:gravity="center"
+        android:layout_weight="1" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#F5F5F5"
+        android:text="@string/landmark2"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:gravity="center"
+        android:layout_weight="1" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#E0E0E0"
+        android:text="@string/landmark3"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:gravity="center"
+        android:layout_weight="1" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#F5F5F5"
+        android:text="@string/landmark4"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:gravity="center"
+        android:layout_weight="1" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#E0E0E0"
+        android:text="@string/landmark5"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:gravity="center"
+        android:layout_weight="1" />
+
+</LinearLayout>

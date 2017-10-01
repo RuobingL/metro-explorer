@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">metro-explorer-hahaha</string>
+    <string name="nearest_station">Foggy Bottom</string>
+    <string name="landmark1">GW</string>
+    <string name="landmark2">Smith Center</string>
+    <string name="landmark3"></string>
+    <string name="landmark4"></string>
+    <string name="landmark5"></string>
 </resources>
