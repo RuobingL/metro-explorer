@@ -5,7 +5,7 @@
     <string name="select_station_text">Select Station</string>
     <string name="favorites_button_text">Favorite Landmarks</string>
     <string name="favorite">favorite</string>
-    <string name="nearest_station">Foggy Bottom</string>
+    <string name="title">Foggy Bottom</string>
     <string name="landmark1">GW</string>
     <string name="landmark2">Smith Center</string>
     <string name="landmark3"></string>

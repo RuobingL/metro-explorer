@@ -4,9 +4,10 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/landmark_title"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="@string/nearest_station"
+        android:text="@string/title"
         android:textStyle="bold"
         android:textAppearance="?android:textAppearanceLarge"
         android:gravity="center"

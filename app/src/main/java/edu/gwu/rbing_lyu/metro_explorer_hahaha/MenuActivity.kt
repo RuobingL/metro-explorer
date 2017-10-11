@@ -17,6 +17,7 @@ import android.location.Location
 import android.location.LocationListener
 
 
+
 class MenuActivity : AppCompatActivity() {
     val PERMISSION_REQUEST_CODE = 1001
 
@@ -24,6 +25,20 @@ class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
+
+    favorites_button.setOnClickListener {
+        val intent = Intent(this@MenuActivity, LandmarksActivity::class.java)
+        intent.putExtra("type", "Favorites")
+        startActivity(intent)
+    }
+
+    nearest_button.setOnClickListener {
+        val intent = Intent(this@MenuActivity, LandmarksActivity::class.java)
+        intent.putExtra("type", "Nearest Stations")
+        startActivity(intent)
+    }
+
+
 //        nearest_button.setOnClickListener({ startActivity(Intent(this, NearestActivity::class.java ))})
         //get Your Current Location
 
