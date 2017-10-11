@@ -14,17 +14,17 @@
             android:textAppearance="?android:textAppearanceLarge"
             android:gravity="center"
             android:background="@drawable/bg_line"/>
-        <ImageView
+        <ImageButton
             android:id="@+id/share_icon"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
-            android:src="@drawable/bg_line"/>
-        <ImageView
+            android:src="@drawable/heart"/>
+        <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_toLeftOf="@id/share_icon"
-            android:src="@drawable/bg_line"/>
+            android:src="@drawable/share"/>
 
     </RelativeLayout>
 
@@ -37,7 +37,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/bg_line"
+            android:src="@drawable/gw"
             android:scaleType="fitStart"
             android:padding="20dp"/>
         <LinearLayout
