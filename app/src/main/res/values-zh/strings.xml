@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Metro-explorer-hahaha</string>
+    <string name="menu_title">地铁探路者</string>
+    <string name="nearest_button_text">最近车站</string>
+    <string name="select_station_button_text">选择车站</string>
+    <string name="favorites_button_text">最爱的路标</string>
+    <string name="favorite">最爱</string>
+</resources>
