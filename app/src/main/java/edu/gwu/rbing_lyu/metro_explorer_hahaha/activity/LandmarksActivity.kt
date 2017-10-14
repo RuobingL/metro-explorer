@@ -1,7 +1,8 @@
-package edu.gwu.rbing_lyu.metro_explorer_hahaha
+package edu.gwu.rbing_lyu.metro_explorer_hahaha.activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import edu.gwu.rbing_lyu.metro_explorer_hahaha.R
 import kotlinx.android.synthetic.main.activity_landmarks.*
 
 /**

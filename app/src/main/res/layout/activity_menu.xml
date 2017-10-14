@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.gwu.rbing_lyu.metro_explorer_hahaha.MenuActivity"
+    tools:context="edu.gwu.rbing_lyu.metro_explorer_hahaha.activity.MenuActivity"
     android:orientation="vertical">
 
     <TextView
