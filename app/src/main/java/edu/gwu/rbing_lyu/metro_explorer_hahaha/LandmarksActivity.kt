@@ -16,5 +16,7 @@ class LandmarksActivity : AppCompatActivity() {
         val type = intent.getCharSequenceExtra("type")
         landmark_title.text = type
 
+
+
     }
 }

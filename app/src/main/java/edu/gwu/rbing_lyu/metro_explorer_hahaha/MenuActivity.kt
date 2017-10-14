@@ -17,8 +17,8 @@ import android.location.Location
 import android.location.LocationListener
 
 
-
 class MenuActivity : AppCompatActivity() {
+
     val PERMISSION_REQUEST_CODE = 1001
 
     @SuppressLint("MissingPermission")
@@ -26,68 +26,24 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
 
-    favorites_button.setOnClickListener {
-        val intent = Intent(this@MenuActivity, LandmarksActivity::class.java)
-        intent.putExtra("type", "Favorites")
-        startActivity(intent)
-    }
-
-    nearest_button.setOnClickListener {
-        val intent = Intent(this@MenuActivity, LandmarksActivity::class.java)
-        intent.putExtra("type", "Nearest Stations")
-        startActivity(intent)
-    }
-
-
-//        nearest_button.setOnClickListener({ startActivity(Intent(this, NearestActivity::class.java ))})
-        //get Your Current Location
-
-
-    }
-/*
-    val LOCATION_CODE = 124
-    fun checkLocationPermission(){
-        if (Build.VERSION.SDK_INT>=23) {
-            if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) !=
-                PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_CODE)
-                return
-            }
-        }
-        getUserLocation()
-    }
-
-
-    fun getUserLocation(){
-        var myLocation = MyLocationListener()
-        val locationManager=getSystemService(Context.LOCATION_SERVICE) as LocationManager
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,3,3f,myLocation)
-    }
-    var myLocation: Location? = null
-
-    inner class MyLocationListener : LocationListener {
-        constructor() : super() {
-            myLocation = Location("me")
-            myLocation!!.longitude = 0.0
-            myLocation!!.latitude = 0.0
-
-
+        favorites_button.setOnClickListener {
+            val intent = Intent(this@MenuActivity, LandmarksActivity::class.java)
+            intent.putExtra("type", "Favorites")
+            startActivity(intent)
         }
 
-        override fun onLocationChanged(location: Location?) {
-            myLocation = location
+        nearest_button.setOnClickListener {
+            val intent = Intent(this@MenuActivity, LandmarksActivity::class.java)
+            intent.putExtra("type", "Nearest Stations")
+            startActivity(intent)
         }
 
-        override fun onProviderEnabled(p0: String?) {
+        select_station_button.setOnClickListener {
+            val landmarksIntent = Intent(this, LandmarksActivity::class.java)
+            startActivity(landmarksIntent)
         }
 
-        override fun onProviderDisabled(p0: String?) {
-        }
-
-        override fun onStatusChanged(p0: String?, p1: Int, p2: Bundle?) {
-        }
 
     }
-*/
 
 }
