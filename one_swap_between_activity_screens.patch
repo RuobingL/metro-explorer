@@ -1,0 +1,15 @@
+Index: app/src/main/java/edu/gwu/rbing_lyu/metro_explorer_hahaha/MenuActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/edu/gwu/rbing_lyu/metro_explorer_hahaha/MenuActivity.kt	(date 1507954819000)
++++ app/src/main/java/edu/gwu/rbing_lyu/metro_explorer_hahaha/MenuActivity.kt	(revision )
+@@ -15,6 +15,7 @@
+ import android.content.Context.LOCATION_SERVICE
+ import android.location.Location
+ import android.location.LocationListener
++import edu.gwu.rbing_lyu.metro_explorer_hahaha.activity.LandmarksActivity
+ 
+ 
+ class MenuActivity : AppCompatActivity() {
