@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
 
     <TextView
         android:id="@+id/landmark_title"
@@ -13,6 +15,14 @@
         android:gravity="center"
         android:layout_weight="1"
         android:background="@drawable/bg_line"/>
+
+    <!-- TODO Change layout to get this to display in the middle of the screen -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:visibility="invisible" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -45,54 +55,54 @@
         android:textAppearance="?android:textAppearanceLarge"
         android:gravity="center"
         android:layout_weight="1" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#E0E0E0"
-        android:text="@string/landmark5"
-        android:textAppearance="?android:textAppearanceLarge"
-        android:gravity="center"
-        android:layout_weight="1" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#F5F5F5"
-        android:text="@string/landmark5"
-        android:textAppearance="?android:textAppearanceLarge"
-        android:gravity="center"
-        android:layout_weight="1" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#E0E0E0"
-        android:text="@string/landmark5"
-        android:textAppearance="?android:textAppearanceLarge"
-        android:gravity="center"
-        android:layout_weight="1" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#F5F5F5"
-        android:text="@string/landmark5"
-        android:textAppearance="?android:textAppearanceLarge"
-        android:gravity="center"
-        android:layout_weight="1" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#E0E0E0"
-        android:text="@string/landmark5"
-        android:textAppearance="?android:textAppearanceLarge"
-        android:gravity="center"
-        android:layout_weight="1" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="#F5F5F5"
-        android:text="@string/landmark5"
-        android:textAppearance="?android:textAppearanceLarge"
-        android:gravity="center"
-        android:layout_weight="1" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#E0E0E0"
+        android:text="@string/landmark5"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:gravity="center"
+        android:layout_weight="1" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#F5F5F5"
+        android:text="@string/landmark5"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:gravity="center"
+        android:layout_weight="1" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#E0E0E0"
+        android:text="@string/landmark5"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:gravity="center"
+        android:layout_weight="1" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#F5F5F5"
+        android:text="@string/landmark5"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:gravity="center"
+        android:layout_weight="1" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#E0E0E0"
+        android:text="@string/landmark5"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:gravity="center"
+        android:layout_weight="1" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#F5F5F5"
+        android:text="@string/landmark5"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:gravity="center"
+        android:layout_weight="1" />
 
 </LinearLayout>

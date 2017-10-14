@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">metro-explorer-hahaha</string>
+    <string name="app_name">Metro Explorer</string>
     <string name="menu_title">Metro Explorer</string>
-    <string name="nearest_button_text">Nearest</string>
+    <string name="nearest_button_text">Nearest Stations</string>
     <string name="select_station_button_text">Select Station</string>
     <string name="select_station_text">Select Station</string>
     <string name="favorites_button_text">Favorite Landmarks</string>
@@ -22,4 +22,5 @@
         the university has since grown to comprise fourteen undergraduate and graduate colleges and schools,
         including the School of Media and Public Affairs, Elliott School of International Affairs,
         Law School, and School of Public Health. </string>
+    <string name="permission_declined">Location permission not granted, cannot find nearest metro stations!</string>
 </resources>
