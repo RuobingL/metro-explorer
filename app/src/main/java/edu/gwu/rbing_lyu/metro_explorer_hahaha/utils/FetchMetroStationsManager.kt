@@ -14,7 +14,7 @@ class FetchMetroStationsManager(val context: Context) {
 
     // Define interface to handle WMATA station fetch callbacks
     interface FetchMetroStationsListener {
-        fun stationsLoaded(array: Array<MetroStation>)
+        fun stationsLoaded(stations: List<MetroStation>)
         fun stationsNotLoaded()
     }
 
@@ -35,7 +35,15 @@ class FetchMetroStationsManager(val context: Context) {
                     result?.let {
                         // Parse result into array of MetroStation objects to return
                         // to activity
-                        Log.d(TAG, it.toString())
+                        fetchMetroStationsListener?.stationsLoaded(
+                            it.getAsJsonArray("Stations").map {
+                                station -> MetroStation(
+                                    station.asJsonObject["Name"].toString(),
+                                    station.asJsonObject["Lat"].asFloat,
+                                    station.asJsonObject["Lon"].asFloat
+                                )
+                            }
+                        )
                     }
                 })
     }

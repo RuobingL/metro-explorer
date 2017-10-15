@@ -24,8 +24,10 @@ class MetroStationActivity : AppCompatActivity(), FetchMetroStationsManager.Fetc
         fetchMetroStationsManager.listStations()
     }
 
-    override fun stationsLoaded(array: Array<MetroStation>) {
-        Log.d(TAG, "Back in Activity")
+    override fun stationsLoaded(stations: List<MetroStation>) {
+        // Debug log for now, verify correctly receives list of MetroStation objects parsed
+        // from WMATA API
+        Log.d(TAG, stations.toString())
     }
 
     override fun stationsNotLoaded() {
