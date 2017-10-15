@@ -12,6 +12,7 @@ import edu.gwu.rbing_lyu.metro_explorer_hahaha.R
 import kotlinx.android.synthetic.main.activity_menu.*
 import org.jetbrains.anko.toast
 
+
 class MenuActivity : AppCompatActivity() {
     private val TAG = "MenuActivity"
     private val LOCATION_PERMISSION_REQUEST_CODE = 777

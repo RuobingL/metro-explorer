@@ -10,10 +10,6 @@ import com.google.android.gms.location.LocationResult
 import java.util.*
 import kotlin.concurrent.timerTask
 
-/**
- * Created by faithgiguere on 10/14/17.
- */
-
 // TODO Send last known location back on timeout, if available
 
 class LocationDetector(val context: Context) {

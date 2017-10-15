@@ -9,9 +9,7 @@ import edu.gwu.rbing_lyu.metro_explorer_hahaha.R
 import edu.gwu.rbing_lyu.metro_explorer_hahaha.utils.LocationDetector
 import kotlinx.android.synthetic.main.activity_landmarks.*
 
-/**
- * Created by ruobinglyu on 10/2/17.
- */
+
 class LandmarksActivity : AppCompatActivity(), LocationDetector.LocationListener {
     private val TAG = "LandmarksActivity"
 
