@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
+import edu.gwu.rbing_lyu.metro_explorer_hahaha.utils.PersistanceManager
 import edu.gwu.rbing_lyu.metro_explorer_hahaha.R
 import kotlinx.android.synthetic.main.activity_menu.*
 import org.jetbrains.anko.toast
@@ -15,11 +16,15 @@ class MenuActivity : AppCompatActivity() {
     private val TAG = "MenuActivity"
     private val LOCATION_PERMISSION_REQUEST_CODE = 777
 
+    private lateinit var persistanceManager: PersistanceManager
+
 
     @SuppressLint("MissingPermission")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
+
+        persistanceManager = PersistanceManager()
 
         favorites_button.setOnClickListener {
             val intent = Intent(this@MenuActivity, LandmarksActivity::class.java)
