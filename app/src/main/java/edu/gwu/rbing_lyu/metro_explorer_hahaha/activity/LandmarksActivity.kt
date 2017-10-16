@@ -9,19 +9,26 @@ import android.widget.ProgressBar
 import edu.gwu.rbing_lyu.metro_explorer_hahaha.R
 import edu.gwu.rbing_lyu.metro_explorer_hahaha.adapter.LandmarksAdapter
 import edu.gwu.rbing_lyu.metro_explorer_hahaha.model.Landmark
+import edu.gwu.rbing_lyu.metro_explorer_hahaha.model.MetroStation
+import edu.gwu.rbing_lyu.metro_explorer_hahaha.utils.FetchMetroStationsManager
 import edu.gwu.rbing_lyu.metro_explorer_hahaha.utils.LocationDetector
 import edu.gwu.rbing_lyu.metro_explorer_hahaha.utils.YelpAuthManager
 import kotlinx.android.synthetic.main.activity_landmarks.*
 import org.jetbrains.anko.toast
 
 
-class LandmarksActivity : AppCompatActivity(), LocationDetector.LocationListener, YelpAuthManager.YelpAuthManagerListner, LandmarksAdapter.OnItemClickedListener {
+class LandmarksActivity : AppCompatActivity(),
+        LocationDetector.LocationListener,
+        YelpAuthManager.YelpAuthManagerListner,
+        LandmarksAdapter.OnItemClickedListener,
+        FetchMetroStationsManager.FetchMetroStationsListener {
     private val TAG = "LandmarksActivity"
 
     // Helper declarations
     private lateinit var locationDetector: LocationDetector
     private lateinit var yelpAuthManager: YelpAuthManager
     private lateinit var landmarksAdapter: LandmarksAdapter
+    private lateinit var fetchMetroStationsManager: FetchMetroStationsManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -111,12 +118,12 @@ class LandmarksActivity : AppCompatActivity(), LocationDetector.LocationListener
     override fun locationFound(location: Location) {
         showLoading(false)
 
-        // TODO This is where we'll get the nearest landmarks
-
-        // Debugging log of location for now
-        Log.d(TAG, "Location is: " + location.latitude + ", " + location.longitude)
-
-        // TODO Use the location to find nearest metro station
+        // Find the nearest metro station using WMATA api. Will go to callback
+        // stationsLoaded if successful, where nearby landmarks will then
+        // be requested from Yelp api
+        fetchMetroStationsManager = FetchMetroStationsManager(this)
+        fetchMetroStationsManager.fetchMetroStationsListener = this
+        fetchMetroStationsManager.getClosestStation(location.latitude.toFloat(), location.longitude.toFloat())
     }
 
     // Called when location not found
@@ -128,5 +135,19 @@ class LandmarksActivity : AppCompatActivity(), LocationDetector.LocationListener
             LocationDetector.FailureReason.TIMEOUT -> Log.d(TAG, "Location timed out")
             LocationDetector.FailureReason.NO_PERMISSION -> Log.d(TAG, "No location permission")
         }
+    }
+
+    // Get nearby Metro station call successful, if there are any,
+    // load the nearby landmarks
+    override fun stationsLoaded(stations: List<MetroStation>) {
+        // Set the title as the title of the closest station found
+        nearby_station_title.text = stations[0].name
+
+        // Get landmarks nearest to the closest metro station
+        loadNearbyLandmarks(stations[0].latitude, stations[0].longitude)
+    }
+
+    override fun stationsNotLoaded() {
+        toast("Could not find nearby Metro stations!")
     }
 }

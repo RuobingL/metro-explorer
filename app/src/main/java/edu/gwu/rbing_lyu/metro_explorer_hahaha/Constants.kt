@@ -10,6 +10,8 @@ object Constants {
 
     val WMATA_API_KEY = "8a12ff1ba3be441f8309f1210da212f1"
     val WMATA_GET_STATIONS_URL = "https://api.wmata.com/Rail.svc/json/jStations"
+    val WMATA_GET_CLOSEST_STATION_URL = "https://api.wmata.com/Rail.svc/json/jStationEntrances"
+    val WMATA_GET_STATION_BY_ID = "https://api.wmata.com/Rail.svc/json/jStationInfo"
 
     val YELP_ACCESS_TOKEN = "YwsaCgafuKLIjlELpEnu-zgpji7Pi2NJXNYlrvfPaqhVDWZUj4fs-9BX1PmFOPtRqf72x0WUGPErjGfqEJvoI4T1bngjDZMHIhgItDwLGbm_5vYtKB6QsOMkrwrkWXYx"
     val YELP_SEARCH_URL = "https://api.yelp.com/v3/businesses/search"

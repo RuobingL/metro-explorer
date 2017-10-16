@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Metro Explorer</string>
     <string name="menu_title">Metro Explorer</string>
-    <string name="nearest_button_text">Nearest Stations</string>
+    <string name="nearest_button_text">Nearest Station</string>
     <string name="select_station_button_text">Select Station</string>
     <string name="select_station_text">Select Station</string>
     <string name="favorites_button_text">Favorite Landmarks</string>
