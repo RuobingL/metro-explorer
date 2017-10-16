@@ -38,7 +38,7 @@ class FetchMetroStationsManager(val context: Context) {
                         fetchMetroStationsListener?.stationsLoaded(
                             it.getAsJsonArray("Stations").map {
                                 station -> MetroStation(
-                                    station.asJsonObject["Name"].toString().replace("\"", ""),
+                                    station.asJsonObject["Name"].asString,
                                     station.asJsonObject["Lat"].asFloat,
                                     station.asJsonObject["Lon"].asFloat
                                 )

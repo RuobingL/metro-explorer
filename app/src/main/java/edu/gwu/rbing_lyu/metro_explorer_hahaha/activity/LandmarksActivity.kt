@@ -6,17 +6,19 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.ProgressBar
 import edu.gwu.rbing_lyu.metro_explorer_hahaha.R
-import edu.gwu.rbing_lyu.metro_explorer_hahaha.model.MetroStation
+import edu.gwu.rbing_lyu.metro_explorer_hahaha.model.Landmark
 import edu.gwu.rbing_lyu.metro_explorer_hahaha.utils.LocationDetector
+import edu.gwu.rbing_lyu.metro_explorer_hahaha.utils.YelpAuthManager
 import kotlinx.android.synthetic.main.activity_landmarks.*
-import kotlinx.android.synthetic.main.row_metro_station.*
+import org.jetbrains.anko.toast
 
 
-class LandmarksActivity : AppCompatActivity(), LocationDetector.LocationListener {
+class LandmarksActivity : AppCompatActivity(), LocationDetector.LocationListener, YelpAuthManager.YelpAuthManagerListner {
     private val TAG = "LandmarksActivity"
 
     // Helper declarations
     private lateinit var locationDetector: LocationDetector
+    private lateinit var yelpAuthManager: YelpAuthManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +50,7 @@ class LandmarksActivity : AppCompatActivity(), LocationDetector.LocationListener
             landmark_title.setText(stationName)
 
             // TODO Use location of this metro station to find nearest landmarks
+            loadNearbyLandmarks(latitude, longitude)
         }
 
         // If type is favorites
@@ -65,8 +68,27 @@ class LandmarksActivity : AppCompatActivity(), LocationDetector.LocationListener
             progressBar.visibility = ProgressBar.VISIBLE
         }
         else {
-            progressBar.visibility = ProgressBar.INVISIBLE
+            progressBar.visibility = ProgressBar.GONE
         }
+    }
+
+    // Uses the YelpAuthManager to load in nearby landmarks by location
+    // Not used when this activity is being used for favorites
+    private fun loadNearbyLandmarks(latitude: Float, longitude: Float) {
+        yelpAuthManager = YelpAuthManager(this)
+        yelpAuthManager.yelpAuthManagerListner = this
+        yelpAuthManager.getNearbyLandmarks(latitude, longitude)
+        showLoading(true)
+    }
+
+    override fun landmarksLoaded(landmarks: List<Landmark>) {
+        showLoading(false)
+        Log.d(TAG, landmarks.toString())
+    }
+
+    override fun landmarksNotLoaded() {
+        showLoading(false)
+        toast("Error loading landmarks!")
     }
 
     override fun locationFound(location: Location) {

@@ -10,6 +10,7 @@ import edu.gwu.rbing_lyu.metro_explorer_hahaha.adapter.MetroStationsAdapter
 import edu.gwu.rbing_lyu.metro_explorer_hahaha.model.MetroStation
 import edu.gwu.rbing_lyu.metro_explorer_hahaha.utils.FetchMetroStationsManager
 import kotlinx.android.synthetic.main.activity_select_station.*
+import org.jetbrains.anko.toast
 
 
 class MetroStationActivity : AppCompatActivity(), FetchMetroStationsManager.FetchMetroStationsListener, MetroStationsAdapter.OnItemClickedListener {
@@ -53,6 +54,6 @@ class MetroStationActivity : AppCompatActivity(), FetchMetroStationsManager.Fetc
     }
 
     override fun stationsNotLoaded() {
-
+        toast("Error loading Metro stations!")
     }
 }
