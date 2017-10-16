@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
 import edu.gwu.rbing_lyu.metro_explorer_hahaha.R
 import edu.gwu.rbing_lyu.metro_explorer_hahaha.adapter.MetroStationsAdapter
 import edu.gwu.rbing_lyu.metro_explorer_hahaha.model.MetroStation
@@ -46,8 +45,8 @@ class MetroStationActivity : AppCompatActivity(), FetchMetroStationsManager.Fetc
         // Use adapter and recycler view handler to fill list of stations
         metroStationsAdapter = MetroStationsAdapter(stations)
 
-        recycler_view.layoutManager = LinearLayoutManager(this)
-        recycler_view.adapter = metroStationsAdapter
+        stations_recycler_view.layoutManager = LinearLayoutManager(this)
+        stations_recycler_view.adapter = metroStationsAdapter
 
         // Set the onClick listener for the adapter
         metroStationsAdapter.onItemClickedListener = this

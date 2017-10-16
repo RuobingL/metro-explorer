@@ -1,19 +1,12 @@
 package edu.gwu.rbing_lyu.metro_explorer_hahaha.adapter
 
-import android.content.Context
-import android.content.Intent
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
 import android.widget.TextView
 import edu.gwu.rbing_lyu.metro_explorer_hahaha.R
-import edu.gwu.rbing_lyu.metro_explorer_hahaha.activity.MetroStationActivity
 import edu.gwu.rbing_lyu.metro_explorer_hahaha.model.MetroStation
-import edu.gwu.rbing_lyu.metro_explorer_hahaha.activity.LandmarkDetailActivity
-import edu.gwu.rbing_lyu.metro_explorer_hahaha.activity.MenuActivity
 
 
 class MetroStationsAdapter(private val stations: List<MetroStation>) : RecyclerView.Adapter<MetroStationsAdapter.ViewHolder>() {
@@ -53,7 +46,7 @@ class MetroStationsAdapter(private val stations: List<MetroStation>) : RecyclerV
     }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener {
-        private val stationNameView: TextView = view.findViewById(R.id.stationName)
+        private val stationNameView: TextView = view.findViewById(R.id.station_name)
 
         // Update metro station row UI with station name
         fun bind(station: MetroStation) {
