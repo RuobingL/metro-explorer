@@ -23,4 +23,5 @@
         including the School of Media and Public Affairs, Elliott School of International Affairs,
         Law School, and School of Public Health. </string>
     <string name="permission_declined">Location permission not granted, cannot find nearest metro stations!</string>
+    <string name="placeholder">Lorem Ipsum</string>
 </resources>

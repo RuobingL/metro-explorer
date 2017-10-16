@@ -1,57 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="edu.gwu.rbing_lyu.metro_explorer_hahaha.activity.MetroStationActivity"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
-        android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.SearchView
+        android:id="@+id/metro_stations_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/toolbar"
+        />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="@string/select_station_text"
-            android:textStyle="bold"
-            android:textAppearance="?android:textAppearanceLarge"
-            android:gravity="center"
-            android:background="@drawable/bg_line"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#E0E0E0"
-            android:text="@string/station1"
-            android:textAppearance="?android:textAppearanceLarge"
-            android:gravity="center" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#F5F5F5"
-            android:text="@string/station2"
-            android:textAppearance="?android:textAppearanceLarge"
-            android:gravity="center" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#E0E0E0"
-            android:text="@string/station3"
-            android:textAppearance="?android:textAppearanceLarge"
-            android:gravity="center" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#F5F5F5"
-            android:text="@string/station4"
-            android:textAppearance="?android:textAppearanceLarge"
-            android:gravity="center" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="#E0E0E0"
-            android:text="@string/station5"
-            android:textAppearance="?android:textAppearanceLarge"
-            android:gravity="center" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
-    </LinearLayout>
-</ScrollView>
-
+</LinearLayout>
