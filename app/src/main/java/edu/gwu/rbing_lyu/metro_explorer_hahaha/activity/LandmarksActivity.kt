@@ -41,8 +41,8 @@ class LandmarksActivity : AppCompatActivity(), LocationDetector.LocationListener
         else if (type == "byStation") {
             // Get the extras passed through intent by MetroStationActivity
             val stationName = intent.getStringExtra("stationName")
-            val longitude = intent.getFloatExtra("longitude")
-            val latitude = intent.getFloatExtra("latitude")
+            val longitude = intent.getFloatExtra("longitude", 0f)
+            val latitude = intent.getFloatExtra("latitude", 0f)
 
             // Set the title as the title of the station click in MetroStationActivity
             landmark_title.setText(stationName)
