@@ -6,23 +6,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/nearby_station_title"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@drawable/bg_line"
-        android:gravity="center"
-        android:text="@string/title"
-        android:textAppearance="?android:textAppearanceLarge"
-        android:textStyle="bold" />
-
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:visibility="gone"
         android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/nearby_station_title"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:gravity="center"
+        android:background="@drawable/bg_line"
+        android:text="@string/placeholder"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textStyle="bold" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/landmarks_recycler_view"

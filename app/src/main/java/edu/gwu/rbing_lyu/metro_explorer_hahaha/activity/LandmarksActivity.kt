@@ -1,5 +1,6 @@
 package edu.gwu.rbing_lyu.metro_explorer_hahaha.activity
 
+import android.content.Intent
 import android.location.Location
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -84,8 +85,15 @@ class LandmarksActivity : AppCompatActivity(),
 
     // On Landmark item click
     override fun onItemClick(position: Int) {
-        // Just a debug logger that logs the name to verify recycler view + clicking works
-        Log.d(TAG, landmarksAdapter.getItem(position).name)
+        // Get the item clicked from the adapter
+        val landmark = landmarksAdapter.getItem(position)
+
+        // Assemble the address from its parts
+        // Pass intent/start LandmarkDetailActivity for landmark clicked
+        val intent = Intent(this@LandmarksActivity, LandmarkDetailActivity::class.java)
+        intent.putExtra("title", landmark.name)
+        intent.putExtra("imageUrl", landmark.image)
+        startActivity(intent)
     }
 
     // Uses the YelpAuthManager to load in nearby landmarks by location

@@ -10,12 +10,19 @@ import edu.gwu.rbing_lyu.metro_explorer_hahaha.model.Landmark
 
 class YelpAuthManager(val context: Context) {
     private val TAG = "YelpAuthManager"
-    var yelpAuthManagerListner: YelpAuthManagerListner? = null
 
     // Define interface to handle landmark fetch callbacks
+    var yelpAuthManagerListner: YelpAuthManagerListner? = null
     interface YelpAuthManagerListner {
         fun landmarksLoaded(landmarks: List<Landmark>)
         fun landmarksNotLoaded()
+    }
+
+    // Define interface to handle landmark detail callbacks
+    var yelpAuthManagerDetailsListener: YelpAuthManagerDetailsListener? = null
+    interface YelpAuthManagerDetailsListener {
+        fun landmarkDetailsLoaded(landmark: Landmark)
+        fun landmarkDetailsNotLoaded()
     }
 
     // Gets nearby landmarks using the Yelp API. Takes latitude and longitude
@@ -48,9 +55,7 @@ class YelpAuthManager(val context: Context) {
                                         landmark.asJsonObject["name"].asString,
                                         landmark.asJsonObject["coordinates"].asJsonObject["latitude"].asFloat,
                                         landmark.asJsonObject["coordinates"].asJsonObject["longitude"].asFloat,
-                                        landmark.asJsonObject["image_url"].asString,
-                                        "",
-                                        landmark.asJsonObject["url"].asString
+                                        landmark.asJsonObject["image_url"].asString
                                 )
                                 }
                         )

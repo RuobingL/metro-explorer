@@ -6,22 +6,10 @@
     <string name="select_station_text">Select Station</string>
     <string name="favorites_button_text">Favorite Landmarks</string>
     <string name="favorite">favorite</string>
-    <string name="title">Foggy Bottom</string>
-    <string name="landmark1">GW</string>
-    <string name="landmark2">Smith Center</string>
-    <string name="landmark3"></string>
-    <string name="landmark4"></string>
-    <string name="landmark5"></string>
-    <string name="station1">Foggy Bottom</string>
-    <string name="station2">Rosslyn</string>
-    <string name="station3">Gallery Place</string>
-    <string name="station4"></string>
-    <string name="station5"></string>
-    <string name="description">The George Washington University (GW, GWU, or George Washington)
-        is a private research university in Washington, D.C. Founded in 1821 as Columbian College,
-        the university has since grown to comprise fourteen undergraduate and graduate colleges and schools,
-        including the School of Media and Public Affairs, Elliott School of International Affairs,
-        Law School, and School of Public Health. </string>
+
+    <string name="landmark_detail_name">Placeholder Name</string>
+    <string name="landmark_detail_address">Address Placeholder</string>
+    <string name="landmark_detail_image_src">https://pixy.org/images/placeholder.png</string>
     <string name="permission_declined">Location permission not granted, cannot find nearest metro stations!</string>
-    <string name="placeholder">Lorem Ipsum</string>
+    <string name="placeholder">No Station</string>
 </resources>

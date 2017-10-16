@@ -7,9 +7,10 @@
         android:layout_height="0dp"
         android:layout_weight="1">
         <TextView
+            android:id="@+id/landmark_detail_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="GW"
+            android:text="@string/landmark_detail_name"
             android:textStyle="bold"
             android:textAppearance="?android:textAppearanceLarge"
             android:gravity="center"
@@ -33,29 +34,25 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="5">
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/gw"
-            android:scaleType="fitStart"
-            android:padding="20dp"/>
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/landmark_detail_name"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:text="GW"
+                android:text="@string/landmark_detail_name"
                 android:textAppearance="?android:textAppearanceLarge"
                 android:layout_weight="1"
                 android:paddingTop="20dp"/>
             <TextView
+                android:id="@+id/landmark_detail_address"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:text="@string/description"
+                android:text="@string/landmark_detail_address"
                 android:textAppearance="?android:textAppearanceSmall"
                 android:layout_weight="5" />
 

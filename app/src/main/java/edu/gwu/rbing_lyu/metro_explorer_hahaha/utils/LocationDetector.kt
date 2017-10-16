@@ -72,6 +72,7 @@ class LocationDetector(val context: Context) {
 
             // Start location updates
             fusedLocationClient.requestLocationUpdates(locationRequest,locationCallback, null)
+
         }
         // If does not have correct permission, send NO_PERMISSION failure back to listener
         else {
