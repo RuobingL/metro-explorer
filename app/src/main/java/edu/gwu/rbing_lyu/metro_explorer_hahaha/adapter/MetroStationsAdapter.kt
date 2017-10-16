@@ -57,7 +57,7 @@ class MetroStationsAdapter(private val stations: List<MetroStation>) : RecyclerV
 
         // Update metro station row UI with station name
         fun bind(station: MetroStation) {
-            stationNameView.text = station.name.replace("\"", "")
+            stationNameView.text = station.name
             // And set the onClickListener
             stationNameView.setOnClickListener(this)
         }

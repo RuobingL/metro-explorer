@@ -1,5 +1,6 @@
 package edu.gwu.rbing_lyu.metro_explorer_hahaha.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
@@ -30,8 +31,14 @@ class MetroStationActivity : AppCompatActivity(), FetchMetroStationsManager.Fetc
     }
 
     override fun onItemClick(position: Int) {
-        // For now, just a debug log of the MetroStation's name clicked
-        Log.d(TAG, metroStationsAdapter.getItem(position).name)
+        // Send to LandmarksActivity and pass the station clicked
+        val station = metroStationsAdapter.getItem(position)
+        val intent = Intent(this@MetroStationActivity, LandmarksActivity::class.java)
+        intent.putExtra("type", "byStation")
+        intent.putExtra("stationName", station.name)
+        intent.putExtra("longitude", station.longitude)
+        intent.putExtra("latitude", station.latitude)
+        startActivity(intent)
     }
 
     override fun stationsLoaded(stations: List<MetroStation>) {

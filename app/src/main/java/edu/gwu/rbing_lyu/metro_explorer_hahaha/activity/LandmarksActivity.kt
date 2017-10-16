@@ -6,8 +6,10 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.ProgressBar
 import edu.gwu.rbing_lyu.metro_explorer_hahaha.R
+import edu.gwu.rbing_lyu.metro_explorer_hahaha.model.MetroStation
 import edu.gwu.rbing_lyu.metro_explorer_hahaha.utils.LocationDetector
 import kotlinx.android.synthetic.main.activity_landmarks.*
+import kotlinx.android.synthetic.main.row_metro_station.*
 
 
 class LandmarksActivity : AppCompatActivity(), LocationDetector.LocationListener {
@@ -22,12 +24,9 @@ class LandmarksActivity : AppCompatActivity(), LocationDetector.LocationListener
 
         // Get the type passed
         val type = intent.getCharSequenceExtra("type")
-        landmark_title.text = type
 
         // If type is 'nearest', set the appropriate title and attempt to get location
         if (type == "nearest") {
-            landmark_title.setText(R.string.nearest_button_text)
-
             // Initialize location detector
             locationDetector = LocationDetector(this)
             locationDetector.locationListener = this
@@ -39,9 +38,24 @@ class LandmarksActivity : AppCompatActivity(), LocationDetector.LocationListener
             locationDetector.detectLocation()
         }
 
-        // Else type is 'favorites', set the appropriate title
-        else {
+        else if (type == "byStation") {
+            // Get the extras passed through intent by MetroStationActivity
+            val stationName = intent.getStringExtra("stationName")
+            val longitude = intent.getFloatExtra("longitude")
+            val latitude = intent.getFloatExtra("latitude")
+
+            // Set the title as the title of the station click in MetroStationActivity
+            landmark_title.setText(stationName)
+
+            // TODO Use location of this metro station to find nearest landmarks
+        }
+
+        // If type is favorites
+        else if (type == "favorites") {
+            // Set the appropriate title
             landmark_title.setText(R.string.favorites_button_text)
+
+            // TODO And get the favorites from PersistanceManager
         }
 
     }
@@ -62,6 +76,8 @@ class LandmarksActivity : AppCompatActivity(), LocationDetector.LocationListener
 
         // Debugging log of location for now
         Log.d(TAG, "Location is: " + location.latitude + ", " + location.longitude)
+
+        // TODO Use the location to find nearest metro station
     }
 
     // Called when location not found
